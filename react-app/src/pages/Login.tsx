@@ -1,7 +1,8 @@
 import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Camera, Lock, User, Shield, AtSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/context/auth-context";
 import { InputWithIcon } from "@/components/ui/input-with-icon";
 import {
   Card,
@@ -14,6 +15,8 @@ import {
 import { Navbar } from "@/components/Navbar";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const { setIsAuthenticated } = useAuth();
   const [loginMethod, setLoginMethod] = useState<
     "face" | "aadhaar" | "password"
   >("password");
@@ -139,6 +142,8 @@ const Login = () => {
       // if (response.ok) {
       //   // Handle successful login (e.g., store token, redirect)
       // }
+      setIsAuthenticated(true);
+      navigate("/dashboard");
 
       console.log("Login payload:", loginPayload);
     } catch (error) {
