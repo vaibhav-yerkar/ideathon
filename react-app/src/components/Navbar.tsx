@@ -12,12 +12,17 @@ export const Navbar = () => {
         </Link>
         <div className="space-x-4">
           {isAuthenticated ? (
-            <Button
-              variant="outline"
-              className="text-primary border-white hover:bg-slate-100"
-            >
-              <Link to="/dashboard">Dashboard</Link>
-            </Button>
+            <>
+              <Button className="bg-white text-primary hover:bg-slate-100 mx-4">
+                <Link to="/faq">Help Center</Link>
+              </Button>
+              <Button
+                variant="outline"
+                className="text-primary border-white hover:bg-slate-100"
+              >
+                <Link to="/dashboard">Dashboard</Link>
+              </Button>
+            </>
           ) : (
             <>
               <Button className="bg-white text-primary hover:bg-slate-100 mx-4">

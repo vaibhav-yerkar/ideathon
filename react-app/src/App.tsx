@@ -36,7 +36,6 @@ const AppContent = () => {
 };
 
 const App = () => (
-  // return(
   <AuthProvider>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -48,7 +47,6 @@ const App = () => (
       </TooltipProvider>
     </QueryClientProvider>
   </AuthProvider>
-  // );
 );
 
 export default App;
