@@ -58,6 +58,14 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      variants: {
+        success: {
+          DEFAULT: "bg-green-100 text-green-800",
+        },
+        error: {
+          DEFAULT: "bg-red-100 text-red-800",
+        },
+      },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },

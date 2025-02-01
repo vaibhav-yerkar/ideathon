@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "@/context/auth-context";
 
 export const Navbar = () => {
-  const { isAuthenticated } = useAuth(false);
+  const { isAuthenticated } = useAuth();
   return (
     <nav className="bg-primary py-4 px-6 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
@@ -20,6 +20,9 @@ export const Navbar = () => {
             </Button>
           ) : (
             <>
+              <Button className="bg-white text-primary hover:bg-slate-100 mx-4">
+                <Link to="/faq">Help Center</Link>
+              </Button>
               <Button
                 variant="outline"
                 className="text-primary border-white hover:bg-slate-100"
